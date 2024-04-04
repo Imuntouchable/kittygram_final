@@ -7,11 +7,7 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY_ENV')
-if SECRET_KEY is not None:
-    print("Переменная окружения SECRET_KEY установлена:", SECRET_KEY)
-else:
-    print("Переменная окружения SECRET_KEY не установлена.")
+SECRET_KEY = os.getenv('SECRET_KEY', 'SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['84.201.164.156', '127.0.0.1', 'localhost', 'teryllosite.sytes.net']
